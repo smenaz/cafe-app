@@ -27,7 +27,7 @@ describe('CafeListComponent', () => {
     fixture = TestBed.createComponent(CafeListComponent);
     component = fixture.componentInstance;
 
-    for(let i=0; i<4; i++){
+    for(let i=0; i<3; i++){
       const cafe = new Cafe(
         faker.number.int(),
         faker.lorem.word(),
@@ -37,12 +37,22 @@ describe('CafeListComponent', () => {
         faker.number.int(),
         faker.image.url.toString()
       );
+      component.cafes.push(cafe);
     }
-
+    
     fixture.detectChanges();
+    debug = fixture.debugElement;
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should have 3 <tr> elements plus header <tr>', () => {
+    const compiled = fixture.nativeElement as HTMLElement;
+    const elements = compiled.querySelectorAll('tr');
+    expect(elements.length).toBe(4);
+  });
+
+  
 });
