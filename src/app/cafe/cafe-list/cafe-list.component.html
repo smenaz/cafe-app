@@ -1,0 +1,25 @@
+<div class="container-fluid mx-auto" style="width: 80%;">
+<div class="container mt-5">
+  <table class="table table-borderless table-custom">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Last</th>
+        <th scope="col">Handle</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cafe of cafes">
+        <td>{{cafe.id}}</td>
+        <td>{{cafe.nombre}}</td>
+        <td>{{cafe.tipo}}</td>
+        <td>{{cafe.region}}</td>
+      </tr>
+      <tr>
+    </tbody>
+  </table>
+
+</div>
+</div>
+

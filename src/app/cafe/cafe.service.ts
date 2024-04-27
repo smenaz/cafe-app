@@ -13,7 +13,7 @@ export class CafeService {
 
   constructor(private http: HttpClient) { }
 
-  get_cafes_avaiables(): Observable<Cafe[]> {
+  getCafesAvaiables(): Observable<Cafe[]> {
     return this.http.get<Cafe[]>(this.apiUrl);
   }
 
